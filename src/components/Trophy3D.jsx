@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, OrbitControls, Environment } from '@react-three/drei';
 import * as THREE from 'three';
@@ -18,10 +18,10 @@ const TrophyModel = ({ isVisible }) => {
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (meshRef.current) {
-      // Moderately sized scale and PERFECTLY CENTERED
-      meshRef.current.scale.set(6, 6, 6);
+      // Smaller size as requested
+      meshRef.current.scale.set(3, 3, 3);
       meshRef.current.position.set(0, 0, 0); // Centered at origin
       
       // Add golden material effect
