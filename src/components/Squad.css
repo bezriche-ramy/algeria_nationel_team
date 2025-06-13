@@ -1,0 +1,248 @@
+.squad {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c5441 0%, #1e3930 100%);
+  min-height: 100vh;
+}
+
+.squad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.squad-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.squad-header h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.squad-header p {
+  color: #b8d4c6;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.position-section {
+  margin-bottom: 60px;
+}
+
+.position-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.position-header h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.player-card {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-card {
+  background: linear-gradient(145deg, #fff9e6, #ffeaa7);
+  border: 3px solid #ffd700;
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+.coach-card .player-image {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.coach-card .player-name {
+  color: #b8860b;
+  font-weight: 700;
+}
+
+.coach-card .player-position {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.player-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.player-card:hover::before {
+  left: 100%;
+}
+
+.player-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+}
+
+.player-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #4CAF50;
+  position: relative;
+  background: linear-gradient(135deg, #e8f5e8, #f1f8e9);
+}
+
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover .player-image img {
+  transform: scale(1.1);
+}
+
+.player-info {
+  z-index: 2;
+  position: relative;
+}
+
+.player-name {
+  color: #2c5441;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.player-position {
+  color: #4CAF50;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .squad {
+    padding: 60px 0;
+  }
+
+  .squad-container {
+    padding: 0 15px;
+  }
+
+  .squad-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .squad-header p {
+    font-size: 1rem;
+  }
+
+  .position-header {
+    text-align: center;
+  }
+
+  .position-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .player-card {
+    padding: 20px;
+  }
+
+  .player-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .player-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .squad-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .position-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .players-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .player-card {
+    max-width: none;
+    padding: 15px;
+  }
+}
+
+/* Animation for cards on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.player-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger animation delay for each card */
+.player-card:nth-child(1) { animation-delay: 0.1s; }
+.player-card:nth-child(2) { animation-delay: 0.2s; }
+.player-card:nth-child(3) { animation-delay: 0.3s; }
+.player-card:nth-child(4) { animation-delay: 0.4s; }
+.player-card:nth-child(5) { animation-delay: 0.5s; }
+.player-card:nth-child(6) { animation-delay: 0.6s; }
+.player-card:nth-child(7) { animation-delay: 0.7s; }
+.player-card:nth-child(8) { animation-delay: 0.8s; }
+.player-card:nth-child(9) { animation-delay: 0.9s; }
