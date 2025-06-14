@@ -30,7 +30,7 @@ const Header = () => {
             <li><a href="#news" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('news'); }}>News</a></li>
             <li><a href="#history" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('history'); }}>History</a></li>
             <li><a href="#squad" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('squad'); }}>Squad</a></li>
-            <li><a href="#stats" className="nav-link">Stats</a></li>
+            <li><a href="#stats" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('stats'); }}>Stats</a></li>
           </ul>
         </nav>
         
