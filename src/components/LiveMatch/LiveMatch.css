@@ -1,0 +1,246 @@
+﻿.live__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  align-items: flex-end;
+  margin-bottom: 1.8rem;
+}
+
+.live__source {
+  display: inline-flex;
+  align-items: center;
+  height: fit-content;
+  padding: 0.32rem 0.68rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+  background: rgba(0, 98, 51, 0.1);
+  border: 1px solid rgba(0, 98, 51, 0.18);
+}
+
+.live__layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.2rem;
+}
+
+.live__feature,
+.live__recent {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  box-shadow: 0 18px 35px rgba(8, 40, 26, 0.08);
+}
+
+.live__feature {
+  padding: 1.2rem;
+}
+
+.live__feature-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.live__state {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(0, 98, 51, 0.1);
+  border: 1px solid rgba(0, 98, 51, 0.22);
+  color: var(--green-800);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.live__state--live {
+  color: #fff;
+  background: linear-gradient(130deg, var(--red-500), #be1e2d);
+  border-color: transparent;
+  animation: pulseLive 1.6s ease-in-out infinite;
+}
+
+.live__competition {
+  font-size: 0.8rem;
+  color: var(--ink-600);
+}
+
+.live__fixture {
+  margin-top: 1.05rem;
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto minmax(7rem, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.live__fixture span:last-child {
+  text-align: right;
+}
+
+.live__fixture strong {
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-900);
+}
+
+.live__detail {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--ink-600);
+}
+
+.live__events {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.live__events h3,
+.live__recent h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.75rem;
+}
+
+.live__events ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.live__events li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.62rem;
+  align-items: flex-start;
+  padding: 0.66rem 0.68rem;
+  border-radius: 0.82rem;
+  background: var(--surface-muted);
+}
+
+.live__events li > span {
+  min-width: 2.35rem;
+  color: var(--green-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.live__events li strong {
+  font-size: 0.82rem;
+}
+
+.live__events li p {
+  font-size: 0.78rem;
+  color: var(--ink-600);
+}
+
+.live__empty {
+  font-size: 0.84rem;
+  color: var(--ink-600);
+}
+
+.live__recent {
+  padding: 1rem;
+}
+
+.live__recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+}
+
+.live__recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.72rem;
+  border-radius: 0.85rem;
+  background: var(--surface-muted);
+  border: 1px solid rgba(0, 98, 51, 0.1);
+}
+
+.live__recent-teams {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.live__recent-date {
+  margin-top: 0.18rem;
+  font-size: 0.74rem;
+  color: var(--ink-500);
+}
+
+.live__recent-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.live__recent-score {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.live__badge {
+  min-width: 1.55rem;
+  padding: 0.15rem 0.46rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.live__badge--w {
+  color: #fff;
+  background: var(--green-600);
+}
+
+.live__badge--l {
+  color: #fff;
+  background: var(--red-500);
+}
+
+.live__badge--d {
+  color: var(--ink-700);
+  background: rgba(118, 130, 124, 0.2);
+}
+
+@keyframes pulseLive {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 980px) {
+  .live__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .live__heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .live__fixture {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .live__fixture span:last-child {
+    text-align: left;
+  }
+}
